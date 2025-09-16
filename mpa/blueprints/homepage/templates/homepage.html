@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GameNews - Notícias de Jogos</title>
+  <!-- Link para Tailwind CSS CDN (opcional, para facilitar o estilo) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Caso queira customizar cores ou ajustar o tema */
+    /* Exemplo: */
+    /* body { background-color: #1a202c; color: white; } */
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-blue-900 py-6 px-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-white">GameNews</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#" class="hover:text-blue-300 transition-colors">Início</a>
+        <a href="#" class="hover:text-blue-300 transition-colors">Notícias</a>
+        <a href="#" class="hover:text-blue-300 transition-colors">Reviews</a>
+        <a href="#" class="hover:text-blue-300 transition-colors">Vídeos</a>
+      </nav>
+      <button class="bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded-md transition-colors">
+        Entrar
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8 flex-grow">
+
+    <!-- Featured News Banner -->
+    <section class="mb-8 bg-blue-800 rounded-lg p-6 shadow-lg">
+      <h2 class="text-3xl font-bold mb-4">Destaque da Semana</h2>
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="flex-1">
+          <img 
+            src="https://placeholder-image-service.onrender.com/image/600x400?prompt=Gaming%20console%20with%20colorful%20lights%20and%20modern%20design%20on%20dark%20background&id=featured-news-1" 
+            alt="Console de jogos moderno com luzes coloridas em fundo escuro" 
+            class="w-full h-64 object-cover rounded-lg"
+          />
+        </div>
+        <div class="flex-1">
+          <h3 class="text-2xl font-semibold mb-3">Revolução nos consoles de próxima geração</h3>
+          <p class="text-gray-300 mb-4">
+            Descubra as inovações tecnológicas que estão transformando a experiência de jogar 
+            nos consoles mais recentes do mercado.
+          </p>
+          <div class="flex items-center justify-between">
+            <span class="bg-blue-600 text-sm px-3 py-1 rounded-full">Hardware</span>
+            <span class="text-sm text-gray-400">18 de Novembro, 2023</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Feed -->
+    <section>
+      <h2 class="text-2xl font-bold mb-6 border-b border-blue-700 pb-2">Últimas Notícias</h2>
+
+      <!-- Container onde as notícias serão inseridas dinamicamente -->
+      <div id="news-feed" class="space-y-6">
+        <!-- Exemplo de notícia estática (remova ou duplique via JS) -->
+        <!--
+        <article class="bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="md:w-1/3">
+              <img 
+                src="https://placeholder-image-service.onrender.com/image/400x250?prompt=Gaming%20related%20image%20RPG&id=news-1"
+                alt="Imagem ilustrativa para notícia sobre RPG"
+                class="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
+            <div class="md:w-2/3">
+              <div class="flex items-center mb-3">
+                <span class="bg-blue-600 text-sm px-3 py-1 rounded-full mr-3">RPG</span>
+                <span class="text-sm text-gray-400">15 de Novembro, 2023</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-white hover:text-blue-300 cursor-pointer transition-colors">
+                Novo jogo de RPG da Bethesda é anunciado com data de lançamento
+              </h3>
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                A Bethesda finalmente revelou seu tão aguardado RPG de mundo aberto com lançamento previsto para o próximo trimestre.
+              </p>
+              <div class="flex items-center justify-between">
+                <button class="bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded-md text-sm transition-colors">
+                  Ler Mais
+                </button>
+                <div class="flex items-center space-x-4">
+                  <span class="text-sm text-gray-400">Por: Redação</span>
+                  <div class="flex items-center space-x-2">
+                    <span class="text-sm text-gray-400">👁️ 2.4K</span>
+                    <span class="text-sm text-gray-400">💬 45</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        -->
+      </div>
+
+      <!-- Botão para carregar mais notícias -->
+      <div class="text-center mt-8">
+        <button id="load-more" class="bg-blue-700 hover:bg-blue-600 px-6 py-3 rounded-md font-semibold transition-colors">
+          Carregar Mais Notícias
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-8 mt-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4">GameNews</h3>
+          <p class="text-gray-400">
+            Sua fonte confiável para as últimas notícias do mundo dos games.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-md font-semibold mb-4">Links Rápidos</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white">Sobre Nós</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Contato</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Política de Privacidade</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-md font-semibold mb-4">Siga-nos</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white">Twitter</a>
+            <a href="#" class="text-gray-400 hover:text-white">Facebook</a>
+            <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+        <p class="text-gray-400 text-sm">
+          © 2023 GameNews. Todos os direitos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
