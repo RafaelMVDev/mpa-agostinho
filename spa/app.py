@@ -7,7 +7,7 @@ import secrets
 
 # - Blueprints -
 from blueprints.homepage.homepage import homepage_bp # Jokenpo blueprint
-from blueprints.noticias_if.rotas_noticias import nt_bp # Forca blueprint
+from blueprints.forca.rotas_forca import fc_bp # Forca blueprint
 
 
 
@@ -16,7 +16,7 @@ app.secret_key = secrets.token_hex(16)
 
 # Registrando as Blueprints aqui
 
-app.register_blueprint(nt_bp,url_prefix = "/noticias")
+app.register_blueprint(fc_bp,url_prefix = "/forca")
 app.register_blueprint(homepage_bp,url_prefix = "/")
 
 

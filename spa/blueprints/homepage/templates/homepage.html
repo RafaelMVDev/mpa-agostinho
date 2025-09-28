@@ -64,7 +64,8 @@
 
       <!-- Container onde as notícias serão inseridas dinamicamente -->
       <div id="feed_noticias" class="space-y-6">
-      
+        <!-- Exemplo de notícia estática (remova ou duplique via JS) -->
+        <!--
         <article class="bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
           <div class="flex flex-col md:flex-row gap-6">
             <div class="md:w-1/3">
@@ -86,7 +87,7 @@
                 A Bethesda finalmente revelou seu tão aguardado RPG de mundo aberto com lançamento previsto para o próximo trimestre.
               </p>
               <div class="flex items-center justify-between">
-                <button class="ver_mais bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded-md text-sm transition-colors">
+                <button class="bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded-md text-sm transition-colors">
                   Ler Mais
                 </button>
                 <div class="flex items-center space-x-4">
@@ -100,7 +101,7 @@
             </div>
           </div>
         </article>
-       
+        -->
       </div>
 
       <!-- Botão para carregar mais notícias -->
@@ -147,34 +148,5 @@
       </div>
     </div>
   </footer>
-
-<div id="popup_ver_mais" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50 overflow-auto p-6">
-  <div class="bg-gray-800 rounded-lg max-w-5xl w-full min-h-[90vh] p-6 relative flex flex-col">
-    <!-- Botão fechar -->
-    <button id="fechar_modal" class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl font-bold">&times;</button>
-
-    <!-- Imagem -->
-    <img id="modal_img" src="" alt="" class="w-full h-96 object-cover rounded mb-6">
-
-    <!-- Categoria e meta -->
-    <div class="flex items-center justify-between mb-4">
-      <span id="modal_categoria" class="bg-blue-600 text-sm px-3 py-1 rounded-full"></span>
-      <span id="modal_meta" class="text-sm text-gray-400"></span>
-    </div>
-
-    <!-- Título -->
-    <h2 id="modal_titulo" class="text-3xl font-bold mb-4"></h2>
-
-    <!-- Conteúdo extra -->
-    <div class="flex items-center space-x-4 mb-4 text-gray-400">
-      <span id="modal_autor"></span>
-      <span id="modal_visitas"></span>
-      <span id="modal_comentarios"></span>
-    </div>
-
-    <!-- Descrição completa -->
-    <p id="modal_descricao" class="text-gray-300 leading-relaxed whitespace-pre-line flex-grow overflow-auto"></p>
-  </div>
-</div>
 
   <script src = "{{url_for('homepage.static',filename = 'scripts/scripts.js')}}" defer > </script>

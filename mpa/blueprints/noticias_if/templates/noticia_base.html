@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ titulo }}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+
+  <!-- Header fixo -->
+  <header class="bg-gray-800 fixed top-0 left-0 right-0 shadow-md z-40">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-blue-400">Moravi News</h1>
+      <nav class="space-x-6">
+        <a href="/" class="hover:text-blue-400">Início</a>
+        <a href="/categorias" class="hover:text-blue-400">Categorias</a>
+        <a href="/contato" class="hover:text-blue-400">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="max-w-4xl mx-auto px-6 pt-28 pb-16">
+    
+    <!-- Imagem de destaque -->
+    <img src="{{ imagem }}" alt="{{ titulo }}" class="w-full h-96 object-cover rounded-lg shadow mb-8">
+
+    <!-- Categoria + Data -->
+    <div class="flex items-center justify-between mb-4">
+      <span class="bg-blue-600 text-sm px-3 py-1 rounded-full">{{ categoria }}</span>
+    </div>
+
+    <!-- Título -->
+    <h2 class="text-3xl font-bold mb-6">{{ titulo }}</h2>
+
+    <!-- Autor, visitas e comentários -->
+    <div class="flex items-center space-x-6 mb-8 text-gray-400">
+      <span>👁️ {{ visitas }}</span>
+      <span>💬 {{ comentarios }}</span>
+    </div>
+
+    <!-- Descrição completa -->
+    <article class="text-gray-300 leading-relaxed whitespace-pre-line">
+      {{ descricao }}
+    </article>
+
+  </main>
+</body>
+</html>
